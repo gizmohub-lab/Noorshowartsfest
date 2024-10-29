@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGODB_CONNECT_URI,)
 
 // Route configurations
 
-app.get('/', (req, res) => res.render('loading'));
+app.get('/', (req, res) => res.render('loding'));
 
 // Homepage route
 app.get('/home', (req, res) => res.render('home'));
