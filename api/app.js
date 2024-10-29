@@ -15,12 +15,11 @@ const app = express();
 
 // Middleware configuration
 
-app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies (form data).
+app.use(express.static(path.join(__dirname, '../public'))); // Serves static files from the `public` directory one level up.
+app.set('view engine', 'ejs'); // Sets the view engine to EJS.
+app.set('views', path.join(__dirname, '../views')); // Points to the `views` directory one level up.
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGODB_CONNECT_URI,)
