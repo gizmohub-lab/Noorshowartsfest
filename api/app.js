@@ -15,7 +15,8 @@ const app = express();
 
 // Middleware configuration
 app.use(express.static(path.join(__dirname, '../public')));
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, '../views')); // Assuming the structure is correct
+
 
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies (form data).
 
