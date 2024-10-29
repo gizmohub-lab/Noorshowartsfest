@@ -14,11 +14,13 @@ require('dotenv').config();
 const app = express();
 
 // Middleware configuration
+app.use(express.static(path.join(__dirname, '../public')));
+app.set('views', path.join(__dirname, '../views'));
 
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies (form data).
-app.use(express.static(path.join(__dirname, '../public'))); // Serves static files from the `public` directory one level up.
+
 app.set('view engine', 'ejs'); // Sets the view engine to EJS.
-app.set('views', path.join(__dirname, '../views')); // Points to the `views` directory one level up.
+
 
 
 // MongoDB connection
